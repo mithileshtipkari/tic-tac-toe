@@ -15,8 +15,10 @@ class Board extends Component{
 	    	/>
 	    );
 	}
-	handleClick(i){
-		console.log(i + 'was clicked')
+	handleClick(i){    
+		const squares = this.state.squares.slice();
+    	squares[i] = 'X';
+    	this.setState({squares: squares});
 	}
   	render(){
   		const status = 'Next player: X';
