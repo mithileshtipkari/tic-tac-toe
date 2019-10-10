@@ -11,12 +11,12 @@ class Board extends Component{
   	}
 	renderSquare(i) {
 	    return (
-	    	<Square value={this.state.squares[i]} 
+	    	<Square value={this.state.squares[i]}
 	    			onClick={()=> this.handleClick(i)}
 	    	/>
 	    );
 	}
-	handleClick(i){    
+	handleClick(i){
 		const squares = this.state.squares.slice();
 		if (calculateWinner(squares) || squares[i]) {
 	      return;
@@ -37,12 +37,14 @@ class Board extends Component{
 	    }
   		return(
   			<div>
+					<br/>
   				<div>{status}</div>
+					<div style={{marginTop : '30px'}}></div>
 				<div style={{height : '60px'}}>
   					{this.renderSquare(0)}
   					{this.renderSquare(1)}
   					{this.renderSquare(2)}
-  				</div>  				
+  				</div>
   				<div>
   					{this.renderSquare(3)}
   					{this.renderSquare(4)}
